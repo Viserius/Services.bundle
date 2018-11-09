@@ -184,6 +184,8 @@ def GetMaxBitrateURL(stream_details):
                 for connection in media['connection']:
                     if (int(connection['priority']) < priority) and ('transferFormat' in connection and 'hls' in connection['transferFormat']):
                         url = connection['href']
+                        if "akamaized" in url:
+        			        continue
                         max_bitrate_found = int(media['bitrate'])
                         priority = int(connection['priority'])
 
