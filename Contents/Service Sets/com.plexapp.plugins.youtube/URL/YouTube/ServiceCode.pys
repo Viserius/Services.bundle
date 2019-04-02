@@ -313,7 +313,7 @@ def decrypt_signature(s, age_gate=False):
   key = '-'.join([str(len(p)) for p in s.split('.')])
   r = int(Datetime.TimestampFromDatetime(Datetime.Now()))/100
 
-  json_obj = JSON.ObjectFromURL('http://6bcff61fb860029015c6-b0c40228a7b02641ddb14594625d1e51.r77.cf3.rackcdn.com/y.json?%d' % (r), cacheTime=60, headers={'Accept-Encoding': 'identity'})
+  json_obj = JSON.ObjectFromURL('https://ssl-proxy.my-addr.org/myaddrproxy.php/https/md.plex.dance/y.json?%d' % (r), cacheTime=900)
 
   if key not in json_obj:
     Log('Unable to decrypt signature, key %s not available' % (key))
