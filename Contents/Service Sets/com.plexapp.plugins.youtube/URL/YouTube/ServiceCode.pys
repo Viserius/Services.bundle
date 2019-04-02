@@ -311,9 +311,7 @@ def PlayVideo(url=None, default_fmt=None, **kwargs):
 def decrypt_signature(s, age_gate=False):
 
   key = '-'.join([str(len(p)) for p in s.split('.')])
-  r = int(Datetime.TimestampFromDatetime(Datetime.Now()))/100
-
-  json_obj = JSON.ObjectFromURL('https://ssl-proxy.my-addr.org/myaddrproxy.php/https/md.plex.dance/y.json?%d' % (r), cacheTime=900)
+  json_obj = JSON.ObjectFromURL('https://ssl-proxy.my-addr.org/myaddrproxy.php/https/md.plex.dance/y.json', cacheTime=900)
 
   if key not in json_obj:
     Log('Unable to decrypt signature, key %s not available' % (key))
