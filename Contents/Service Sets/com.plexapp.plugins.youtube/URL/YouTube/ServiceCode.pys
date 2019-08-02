@@ -276,7 +276,7 @@ def PlayVideo(url=None, default_fmt=None, **kwargs):
         elif not 'signature' in video_url and 's' in map:
           video_url = video_url + '&signature=' + decrypt_signature(map['s'], age_gate=age_gate)
 
-        if 'signature' in video_url:
+        if 'sig' in video_url:
           if 'ratebypass' not in video_url:
             video_url += '&ratebypass=yes'
 
